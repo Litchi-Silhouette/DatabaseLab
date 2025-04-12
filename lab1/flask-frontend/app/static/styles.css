@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.dropdown {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Custom dropdown styling */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    vertical-align: middle;
+}
+
+.dropdown-selected {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.dropdown-options div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-options div:hover {
+    background-color: #f1f1f1;
+}
+
+/* Align the submit button with the dropdown */
+.submit-button {
+    margin-left: 20px;
+    padding: 10px 20px;
+    height: 100%;
+    line-height: 20px;
+    border: 1px solid #ccc;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+#loading {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Ensure the response table spans the full width and extends vertically */
+#response-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#response-table th,
+#response-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+#response-table th {
+    background-color: #f2f2f2;
+}
