@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scenario Selector</title>
+    <title>数据库设计实习展示</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=1.0">
 </head>
 <body>
-    <h1>Scenario Selector</h1>
+    <h1>数据库设计实习展示</h1>
     <form id="scenario-form">
         <div class="form-group">
-            <label for="scenarios" style="margin-right: 10px;">Select Scenario:</label>
+            <label for="scenarios" style="margin-right: 10px;">选择使用示例:</label>
             <div class="custom-dropdown">
-                <div id="dropdown-selected" class="dropdown-selected">Select a scenario</div>
+                <div id="dropdown-selected" class="dropdown-selected">选择一个示例</div>
                 <div id="dropdown-options" class="dropdown-options">
-                    <div data-value="post_post">User Post</div>
-                    <div data-value="post_target">Post Target</div>
-                    <div data-value="post_comment_score">Comment and Score</div>
-                    <div data-value="post_comment_comment">Comment on Comment</div>
-                    <div data-value="req_topic_posts">Query Topic Posts</div>
-                    <div data-value="req_target_avgscore">Query Target Avg Score</div>
-                    <div data-value="req_target_comments">Query Target Comments</div>
-                    <div data-value="req_user_actions">Query User Actions</div>
+                    <div data-value="post_post">发布帖子</div>
+                    <div data-value="post_target">发布评分对象</div>
+                    <div data-value="post_comment_score">对评分对象评论评分</div>
+                    <div data-value="post_comment_comment">对评论追评（楼中楼）</div>
+                    <div data-value="req_topic_posts">查询主题下的帖子</div>
+                    <div data-value="req_target_avgscore">查询帖子评分对象的平均分</div>
+                    <div data-value="req_target_comments">查询帖子评分对象下的评论</div>
+                    <div data-value="req_user_actions">查询用户历史记录</div>
                 </div>
             </div>
             <button type="submit" id="submit-button" class="submit-button">Submit</button>
@@ -100,6 +100,6 @@
             </tbody>
         </table>
     </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

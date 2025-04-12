@@ -1,14 +1,23 @@
 from flask import render_template, request, jsonify
 from . import app
-from .Backend.Backend import Database
+from .Backend.DataBase import initDB
+from .Backend.Requests import handle_request
 import asyncio
 import json
+import os
 
-db = Database()
+path='../test.db'
+if os.path.exists(path):
+    os.remove(path)
+initDB(path)
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
 
 @app.route('/api/submit', methods=['POST'])
 def submit():
@@ -21,7 +30,7 @@ def submit():
     print(f"Received request data: {request_data}")
 
     # Call the handle_request function asynchronously
-    response = asyncio.run(asyncio.to_thread(db.handle_request, request_data))
+    response = asyncio.run(asyncio.to_thread(handle_request, request_data))
 
     # Return the response to the front-end
     return jsonify(json.dumps(response))
