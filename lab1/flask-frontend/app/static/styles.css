@@ -127,3 +127,29 @@ th {
 #response-table th {
     background-color: #f2f2f2;
 }
+
+.form-fields {
+    display: none;
+}
+
+.form-fields.active {
+    display: block;
+}
+
+.form-fields label {
+    display: block;
+    margin: 5px 0;
+}
+
+.form-fields input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.form-fields textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 0px;
+    box-sizing: border-box;
+}
