@@ -19,7 +19,7 @@ def getDB():
     return DB_CONNECTION
 
 def createDB(path = ':memory:'):
-    conn = sqlite3.connect(path)
+    conn = sqlite3.connect(path, check_same_thread=False)
     conn.execute("PRAGMA foreign_keys = 1")
     cursor = conn.cursor()
     cursor.executescript('''

@@ -14,6 +14,8 @@
             <div class="custom-dropdown">
                 <div id="dropdown-selected" class="dropdown-selected">选择一个示例</div>
                 <div id="dropdown-options" class="dropdown-options">
+                    <div data-value="reg_user">注册用户</div>
+                    <div data-value="reg_topic">注册主题</div>
                     <div data-value="post_post">发布帖子</div>
                     <div data-value="post_target">发布评分对象</div>
                     <div data-value="post_comment_score">对评分对象评论评分</div>
@@ -29,6 +31,14 @@
         <br>
         <div id="input-data-section">
             <!-- Dynamic form fields -->
+            <div id="reg_user" class="form-fields">
+                <label>Nickname:</label>
+                <input type="text" id="reg_user_user_nickname">
+            </div>
+            <div id="reg_topic" class="form-fields">
+                <label>TopicName:</label>
+                <input type="text" id="reg_topic_topic_name">
+            </div>
             <div id="post_post" class="form-fields">
                 <label>User ID:</label>
                 <input type="text" id="post_post_user_id">

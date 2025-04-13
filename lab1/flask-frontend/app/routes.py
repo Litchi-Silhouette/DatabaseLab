@@ -2,7 +2,6 @@ from flask import render_template, request, jsonify
 from . import app
 from .Backend.DataBase import initDB
 from .Backend.Requests import handle_request
-import asyncio
 import json
 import os
 
@@ -29,8 +28,11 @@ def submit():
 
     print(f"Received request data: {request_data}")
 
-    # Call the handle_request function asynchronously
-    response = asyncio.run(asyncio.to_thread(handle_request, request_data))
-
-    # Return the response to the front-end
-    return jsonify(json.dumps(response))
+    try:
+        # Call the handle_request method of the Database instance
+        response = handle_request(request_data)
+        print(f"Response: {response}")
+        return jsonify(json.dumps(response)), 200
+    except Exception as e:
+        print(f"Error occurred: {e}")
+        return jsonify({"message": "An error occurred", "error": str(e)}), 500
