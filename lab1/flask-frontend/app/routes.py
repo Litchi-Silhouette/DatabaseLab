@@ -1,6 +1,6 @@
 from flask import render_template, request, jsonify
 from . import app
-from .Backend.DataBase import initDB
+from .Backend.DataBase import initDB, init_sample_data
 from .Backend.Requests import handle_request
 import json
 import os
@@ -9,6 +9,7 @@ path='../test.db'
 if os.path.exists(path):
     os.remove(path)
 initDB(path)
+init_sample_data()
 
 @app.route('/')
 def index():
